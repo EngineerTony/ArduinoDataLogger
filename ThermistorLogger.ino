@@ -100,10 +100,13 @@ ISR(TIMER1_OVF_vect)
   
 //Send data to Excel
   Serial.print("DATA,TIME,"); //writes the time in the first column A and the time since the measurements started in column B
-  Serial.print(flIcur1);
-  Serial.print(flIcur2);
-  Serial.print(flVNTC1);
-  Serial.print(flVNTC2);
+  Serial.print(flIcur1,8);
+  Serial.print(",");
+  Serial.print(flVNTC1,8);
+  Serial.print(",");
+  Serial.print(flIcur2,8);
+  Serial.print(",");
+  Serial.print(flVNTC2,8);
   Serial.println(); //be sure to add println to the last command so it knows to go into the next row on the second run
 
   //flash led to signify complete
